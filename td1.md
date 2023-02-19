@@ -457,173 +457,44 @@ output: no server running on /tmp/tmux-1000/default
 
 
 ### Exercise 4:.5 Use functions arguments / parameters
+
+1. Display the cmatrix help function
 ```
+cmatrix -h
 ```
 
+2. Launch cmatrix and make it display white characters (in place of the
+green)
 ```
-```
-
-```
-```
-
-```
+cmatrix -C white
 ```
 
+3. Re-launch cmatrix and slow down the speed of characters actualization
 ```
-```
-
-```
-```
-
-```
+cmatrix -s 20
 ```
 
+4. Stop cmatrix
+Ctrl+C
+
+5. Launch cmatrix with both :
+— A slow speed of characters actualization
+— Blue characters
 ```
+cmatrix -s 20 -C blue
 ```
 
+6. Display cmatrix manual (different from the help notice)
 ```
-```
-
-```
-```
-
-```
+man cmatrix
 ```
 
+7. Display the tmux help function
 ```
-```
-
-```
-```
-
-```
+tmux -h
 ```
 
+8. Display the tmux manual
 ```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-il y a rien qui va de au de la racine 
-root
-il y a la racine 
-il y a home et basta
-
-
-
-```
-ls -a
-```
-h
-```
-ls -a
+man tmux
 ```
