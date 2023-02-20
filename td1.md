@@ -12,16 +12,21 @@ cd signifie change directory et / représente le root directory
 ```
 ls -a
 ```
+l'ensemble des fichiers et des fichiers cachés
 
 3. Check your current location
 ```
 pwd
 ```
+pour savoir le current working directory
 
 4.  Try to create a directory named test
 ```
 mkdir test
 ```
+
+créer un folder
+
 output: cannot create directory ‘test’: Permission denied
 
 5.  Go to the general home directory (should contain folders named after
@@ -111,6 +116,7 @@ mkdir notes
 ```
 mv dylan_riboulet.txt notes/
 ```
+pour déplacer
 
 8. Rename the text file by appending the current year [first_name]_[last_name]_[current_year].txt
 ```
@@ -498,3 +504,25 @@ tmux -h
 ```
 man tmux
 ```
+
+chevron > permet de rediriger la sortie d'une fonction 
+echo "ammff" > bloup
+> creer un fichier et mettre le contenue dedans
+bloup est un fichier
+ls
+le fichier bloup est présent
+cat bloup
+va afficher ammff
+
+pour ajouter de l'information à un fichier déjà existant
+>> 
+mais aussi pour ajouter à un nouveau fichier
+
+echo c'est une première fonction ça va output
+grep c'est une autre fonction
+grep son input c'est l'output de echo
+grep 
+log c'est toutes les outputs des différents programmes
+le grep ça permet de recupérer une certaine ligne de ce output
+le grep c'est une fonction de recherche
+ex l'erreur à 4h du matin
