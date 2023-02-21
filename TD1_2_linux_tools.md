@@ -290,99 +290,68 @@ On constate que le taux de compression diminue à mesure que le fichier devient 
 
 
 ## Exercise 6: ACLs : Access Control Lists
+
+1. Create users
+```
+sudo useradd -m client_1 -p passwd-client_1
+sudo useradd -m contributor_1 -p passwd-contributor_1
+sudo useradd -m contributor_2 -p passwd-contributor_2
 ```
 
+2. Create groups
+```
+sudo groupadd clients
+sudo groupadd contributors
 ```
 
+3. Add users to their respective group
+```
+sudo usermod -a -G clients client_1
+sudo usermod -a -G contributors contributor_1
+sudo usermod -a -G contributors contributor_2
 ```
 
+4. Check the users and groups have been successfully created
+```
+getent passwd client_1
+getent passwd contributor_1
+getent passwd contributor_2
+getent group clients
+getent group contributors
 ```
 
+5. Create a folder lika_project and give it the following authorizations to
+groups
+```
+sudo mkdir lika_project
+sudo chgrp clients lika_project
+sudo chmod 750 lika_project
+sudo setfacl -m g:clients:r lika_project
+sudo setfacl -m g:contributors:rw lika_project
 ```
 
+
+6. Also use the command ls -l and notice the change on lika_project folder
+```
+ls -l
 ```
 
+7. Change user and become as a client, then try deleting the folder
+```
+su client_1
+rm -r lika_project
 ```
 
+8. Now change user and become as a contributor, then try deleting the
+folder
+```
+exit
+su contributor_1
+rm -r lika_project
 ```
 
+9. Check who is the current user
 ```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
+whoami
 ```
 
