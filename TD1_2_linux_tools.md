@@ -139,20 +139,26 @@ pilou
 ```
 En ouvrant une nouvelle fenetre terminale 
 
+## Exercise 3: Scheduling task - daemon
+
+1. Create a script say_hello.sh
+```
+mkdir say_hello.sh
 ```
 
 ```
-
+echo "$(date) Hello" >> hellos.txt
 ```
 
+2. Make the script executable
+```
+chmod +x say_hello.sh
 ```
 
+3. Use crontab to schedule the running of the script every minute
 ```
-
-```
-
-```
-
+crontab -e
+* * * * * /say_hello.sh
 ```
 
 ```
