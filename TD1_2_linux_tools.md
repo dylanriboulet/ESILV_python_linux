@@ -225,50 +225,71 @@ ls -a
 cat log_sha
 ```
 
+## Exercise 5: Compressing
+
+1. Install the QPDF free command-line program.
+Part of this program is the zlib-flate command that compress and uncompress files using the deflate algorithm.
+```
+sudo apt-get install qpdf
 ```
 
+2. Create a directory "compress", go into this directory
+```
+mkdir compress
+cd compress
 ```
 
+3. Create a first file "hello" whose content is "Hello"
+```
+echo "Hello" > hello
 ```
 
+4. Compute the deflate compression (level 1) of this file. Store the compressed file size into a file log_compress
+```
+zlib-flate -1 < hello | wc -c > log_compress
 ```
 
+5. Create a second file "hello_multiple" whose content is 1000 lines of "Hello"
+```
+yes "Hello" | head -n 1000 > hello_multiple
 ```
 
+6. Compute the deflate compression (level 1) of this file. Store the compressed file size into a file log_compress
+```
+zlib-flate -1 < hello_multiple | wc -c >> log_compress
 ```
 
+7. Create a third file "hello_mulitple_i" whose content is 1000 lines of "Hello
+i" (i varying from 1 to 100)
+```
+for i in {1..100}; do echo "Hello $i"; done > hello_multiple_i
 ```
 
+8. Compute the deflate compression (level 1) of this third file. Store the
+compressed file size into log_compress
+```
+zlib-flate -1 < hello_multiple_i | wc -c >> log_compress
 ```
 
+9. Display the content of log_compress
+```
+cat log_compress
 ```
 
+10. Compute the compression ratio of each file, also display it as a simple
+fraction (e.g. 12.6 => 10 :1)
+```
+echo "Compression ratio:"
+echo "Hello: $(echo "$(stat -c%s hello_compressed) / $(stat -c%s hello)" | bc | factor)"
+echo "Hello_multiple: $(echo "$(stat -c%s hello_multiple_compressed) / $(stat -c%s hello_multiple)" | bc | factor)"
+echo "Hello_multiple_i: $(echo "$(stat -c%s hello_multiple_i_compressed) / $(stat -c%s hello_multiple_i)" | bc | factor)"
 ```
 
-```
+11. Analyse the results
+On constate que le taux de compression diminue à mesure que le fichier devient plus complexe.
 
-```
 
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
+## Exercise 6: ACLs : Access Control Lists
 ```
 
 ```
