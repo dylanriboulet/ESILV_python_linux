@@ -187,3 +187,19 @@ sudo apt-get install qpdf
 zlib-flate -compress < hello_modified.txt > .git/objects/first_two_characters_of_hash/last_38_characters_of_hash
 
 git cat-file -t hash_object and git cat-file -p hash_object
+
+cp -r .git /path/to/backup && rm -rf .git && git init
+
+git add hello.txt
+
+git ls-files --stage
+
+git cat-file -p hash_object
+
+for i in {1..100}; do echo "Hello Mister $i" >> hello_100.txt; done
+
+git add hello_100.txt
+
+du -sh hello_100.txt
+
+du -sh .git/objects/*/*
